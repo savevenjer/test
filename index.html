@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7f2">
+  <meta name="description" content="จดหมายขอโทษจากใจ ถึงคนสำคัญ">
+  <title>ขอโทษนะคนเก่ง ♡</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap');
+    :root{--ink:#49363a;--muted:#8d7475;--rose:#d86b78;--pink:#f8dce0;--cream:#fffaf4;--peach:#ffe9d7;--line:#f0d9d7}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:'Anuphan','IBM Plex Sans Thai',sans-serif;background:radial-gradient(ellipse at 13% 8%,#ffe8e6 0,transparent 34%),radial-gradient(ellipse at 91% 76%,#ffead8 0,transparent 36%),#fff9f5;overflow-x:hidden}
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+    .wrap{width:min(100% - 36px,790px);margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) 0 calc(70px + env(safe-area-inset-bottom))}.topline{display:flex;align-items:center;justify-content:space-between;color:#a47e80;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.seal{border:1px solid var(--line);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff9f5;color:var(--rose);font-size:1.15rem}
+    .hero{text-align:center;padding:clamp(56px,10vw,105px) 0 52px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid #f2dada;border-radius:999px;background:#fff9f4;color:#a46f72;font-size:.83rem}.eyebrow span{color:var(--rose)}h1{font-size:clamp(2.5rem,8vw,5rem);line-height:1.16;letter-spacing:-.055em;margin:24px 0 16px;font-weight:600}.hero h1 em{font-style:normal;color:var(--rose)}.lead{color:var(--muted);font-size:clamp(1rem,2.6vw,1.16rem);line-height:1.9;margin:0 auto;max-width:530px}.heart{display:inline-block;color:var(--rose);animation:beat 1.5s ease-in-out infinite}@keyframes beat{50%{transform:scale(1.18)}}
+    .letter{position:relative;background:rgba(255,255,255,.77);border:1px solid #f4e2dc;border-radius:28px;padding:clamp(25px,6vw,48px);box-shadow:0 22px 65px #9f646012;backdrop-filter:blur(8px)}.letter:before{content:'“';position:absolute;right:24px;top:-31px;font-family:Georgia,serif;font-size:100px;color:#f4c9cb;line-height:1}.letter-tag{font-size:.76rem;letter-spacing:.12em;color:#bd8585}.letter h2{font-size:1.55rem;margin:12px 0 14px}.letter p{color:#715c5c;line-height:1.95;margin:0 0 14px}.letter p:last-child{margin-bottom:0}.signature{text-align:right;color:#a46f72!important;margin-top:21px!important}
+    .promise{margin:52px 0 0}.section-kicker{text-align:center;color:#b58483;font-size:.75rem;letter-spacing:.14em}.promise h2,.question h2{text-align:center;font-size:clamp(1.65rem,5vw,2.4rem);margin:9px 0 25px;letter-spacing:-.03em}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.step{border:1px solid #f1dfd9;border-radius:19px;padding:21px 17px;background:#fffaf6}.step .num{font-size:.75rem;color:#d7868a;letter-spacing:.12em}.step h3{font-size:1rem;margin:10px 0 6px}.step p{font-size:.88rem;line-height:1.7;color:#917878;margin:0}
+    .question{text-align:center;margin:65px auto 0;padding:0 0 24px}.question .sub{margin:-10px auto 24px;color:var(--muted);line-height:1.8}.actions{height:100px;display:flex;align-items:center;justify-content:center;gap:15px;position:relative}.btn{border:0;border-radius:999px;padding:14px 24px;font:600 1rem 'Anuphan','IBM Plex Sans Thai',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s}.btn:focus-visible{outline:3px solid #e7a2a9;outline-offset:4px}.yes{color:white;background:linear-gradient(135deg,#e47c86,#cf5c70);box-shadow:0 10px 25px #cf5c7040}.yes:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 30px #cf5c7050}.no{background:#fff;border:1px solid var(--line);color:#957e7e;position:relative;z-index:2;touch-action:none}.tiny-note{font-size:.8rem;color:#ad9290;margin-top:12px}.answer{display:none;margin:25px auto 0;max-width:520px;border:1px solid #f1d6d3;border-radius:21px;padding:24px;background:#fff8f5;animation:rise .45s ease both}.answer.show{display:block}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}.answer h3{color:#c75f70;margin:0 0 9px}.answer p{margin:0;color:#775e5e;line-height:1.85}.footer{text-align:center;color:#b29692;font-size:.8rem;margin-top:56px}.float{position:fixed;z-index:-1;color:#e6a0a4;opacity:.35;animation:drift 9s ease-in-out infinite}.f1{top:20%;left:5%;font-size:24px}.f2{top:72%;right:7%;font-size:32px;animation-delay:-3s}.f3{top:49%;left:2%;font-size:18px;animation-delay:-6s}@keyframes drift{50%{transform:translateY(-18px) rotate(10deg)}}
+    @media(max-width:620px){.steps{grid-template-columns:1fr}.step{display:grid;grid-template-columns:36px 1fr;column-gap:8px;padding:16px}.step .num{grid-row:span 2;padding-top:2px}.step h3{margin:0 0 3px}.actions{gap:8px}.btn{padding:13px 17px;font-size:.94rem}.letter{border-radius:23px}.wrap{width:min(100% - 28px,790px)}}
+    @media(max-width:430px){.wrap{width:calc(100% - 32px)}.topline{font-size:.7rem}.hero{padding-top:58px;padding-bottom:38px}.lead{font-size:1rem}.actions{height:112px;gap:10px}.btn{min-height:48px;padding-inline:18px}.question{margin-top:54px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div><span class="float f1" aria-hidden="true">♡</span><span class="float f2" aria-hidden="true">✿</span><span class="float f3" aria-hidden="true">✧</span>
+  <main class="wrap">
+    <div class="topline"><span>A little note from me</span><span class="seal" aria-hidden="true">♡</span></div>
+    <section class="hero"><div class="eyebrow"><span>✦</span> ถึงอ้วนคนเก่ง</div><h1>เค้ามีเรื่องอยาก<br><em>ขอโทษนะ</em> <span class="heart">♡</span></h1><p class="lead">ขอให้อ้วนลองอ่านสิ่งที่เค้าจะบอกจากนี้นะ<br>โดยไม่เร่งให้เธอต้องหายโกรธในทันที</p></section>
+    <article class="letter"><div class="letter-tag"></div><h2>เค้าอยากขอโทษอ้วนจากใจจริง</h2><p>เค้าขอโทษที่พูดจาไม่ดี และไม่คิดให้รอบคอบก่อนพูด จนทำให้เธอเสียความรู้สึกอยู่บ่อย ๆ สิ่งที่เค้าพูดและทำมันไปกระทบกับความรู้สึกของเทอ ไม่มีข้อแก้ตัวไหนทำให้ความรู้สึกของเธอเจ็บน้อยลง</p><p>เค้ารู้ว่าคำขอโทษอย่างเดียวไม่พอ ต่อจากนี้เค้าจะพยามไม่พูดไปเรื่อยจะคิดก่อนพูด จะไม่พูดแล้วว่าซ้ำกับคนนู้นคนนี้ จะตั้งใจพาอ้วนไปสร้างความทรงจำใหม่ๆด้วยกัน </p><p>จะพาเทอไปทำแต่สิ่งดีๆ จะให้เทอได้แต่สิ่งดีๆ เค้าอยากมีเทออยู่ในช่วงเวลายังมีอะไรดีเยอะเลยที่ยังไม่ได้ทำด้วยกัน เค้าทำให้วันนี้ของเทอมันแย่ไปเลย เค้ารู้สึกผิดมากๆ</p><p class="signature">ขอโทษจริง ๆ นะ<br>จากคนที่กำลังเรียนรู้จะดูแลหัวใจเธอให้ดีกว่านี้ ♡</p></article>
+    <section class="promise"><div class="section-kicker">WHAT I WANT TO DO BETTER</div><h2>ครั้งนี้ขอทำให้เห็นนะ</h2><div class="steps"><article class="step"><span class="num">01</span><h3>จะทำตัวเองให้ดีขึ้น</h3><p>เค้าจะไม่ไปเปรียบเทียบกับใครอีกแล้ว เค้ารู้แล้วว่า ครั้งนี้มันคือเรื่องของเราสองคน</p></article><article class="step"><span class="num">02</span><h3>คิดก่อนพูด</h3><p>เค้าจะคิดก่อนพูดไม่ไปทำร้ายความรู้สึกของเทออีก</p></article><article class="step"><span class="num">03</span><h3>รับผิดชอบคำพูด</h3><p>ถ้าพลาดอีก จะยอมรับ ขอโทษ และแก้ที่การกระทำให้สม่ำเสมอ</p></article></div></section>
+    <section class="question"><div class="section-kicker">WHENEVER YOU FEEL READY</div><h2>ขอโอกาสให้เค้า<br>ค่อย ๆ ทำให้ดีขึ้นได้ไหม?</h2><p class="sub">คืนดีกันนะอ้วน<br>แค่เธอได้อ่านข้อความนี้ เค้าก็ขอบคุณแล้ว</p><div class="actions" id="actions"><button class="btn yes" id="yes">คืนดีกันนะ ♡</button><button class="btn no" id="no" aria-label="ไม่คืนดี (ปุ่มนี้กำลังหนี)" aria-describedby="no-note">ไม่คืนดี</button></div><div class="tiny-note" id="no-note">ปุ่มนี้ขี้อาย… ลองจับดูสิ 🙈</div><div class="answer" id="answer" role="status" aria-live="polite"><h3>ขอบคุณที่ยังให้โอกาสนะ ♡</h3><p>เค้าจะไม่ถือว่าทุกอย่างกลับมาเหมือนเดิมทันที จะค่อย ๆ พิสูจน์ด้วยการฟัง พูดดี ๆ และดูแลความรู้สึกเธอให้ดีกว่าเดิม ถ้าอยากคุยเมื่อไหร่ เค้าพร้อมฟังนะ</p></div></section>
+    <footer class="footer">ทำด้วยความตั้งใจ และคำขอโทษจากใจ ♡</footer>
+  </main>
+  <script>
+    const noBtn=document.getElementById('no'), zone=document.getElementById('actions'), note=document.getElementById('no-note');
+    let tries=0;
+    function dodge(){
+      const z=zone.getBoundingClientRect(), b=noBtn.getBoundingClientRect();
+      const maxX=Math.max(0,z.width-b.width), maxY=Math.max(0,z.height-b.height);
+      let x=Math.random()*maxX, y=Math.random()*maxY;
+      if(Math.abs(x-(b.left-z.left))<80) x=x<maxX/2?Math.min(maxX,x+100):Math.max(0,x-100);
+      noBtn.style.position='absolute'; noBtn.style.left=x+'px'; noBtn.style.top=y+'px';
+      tries++;
+      const lines=['อุ๊ย เกือบแล้ว 😳','ขอคิดดูก่อนน้า… อ้าว หนีอีกแล้ว','จับไม่ได้หรอก เค้าเขิน 🙈','ปุ่มนี้อยากให้คุยกันดี ๆ มากกว่า ♡'];
+      note.textContent=lines[(tries-1)%lines.length];
+    }
+    noBtn.addEventListener('pointerenter',dodge);
+    noBtn.addEventListener('pointerdown',e=>{e.preventDefault();dodge()});
+    noBtn.addEventListener('click',e=>{e.preventDefault();dodge()});
+    document.getElementById('yes').addEventListener('click',()=>{document.getElementById('answer').classList.add('show');document.getElementById('answer').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('yes').textContent='ขอบคุณนะ ♡';});
+  </script>
+</body>
+</html>
+
+

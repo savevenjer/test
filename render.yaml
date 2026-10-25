@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: apology-note
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
