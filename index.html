@@ -17,7 +17,8 @@
     .promise{margin:52px 0 0}.section-kicker{text-align:center;color:#b58483;font-size:.75rem;letter-spacing:.14em}.promise h2,.question h2{text-align:center;font-size:clamp(1.65rem,5vw,2.4rem);margin:9px 0 25px;letter-spacing:-.03em}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.step{border:1px solid #f1dfd9;border-radius:19px;padding:21px 17px;background:#fffaf6}.step .num{font-size:.75rem;color:#d7868a;letter-spacing:.12em}.step h3{font-size:1rem;margin:10px 0 6px}.step p{font-size:.88rem;line-height:1.7;color:#917878;margin:0}
     .question{text-align:center;margin:65px auto 0;padding:0 0 24px}.question .sub{margin:-10px auto 24px;color:var(--muted);line-height:1.8}.actions{height:100px;display:flex;align-items:center;justify-content:center;gap:15px;position:relative}.btn{border:0;border-radius:999px;padding:14px 24px;font:600 1rem 'Anuphan','IBM Plex Sans Thai',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s}.btn:focus-visible{outline:3px solid #e7a2a9;outline-offset:4px}.yes{color:white;background:linear-gradient(135deg,#e47c86,#cf5c70);box-shadow:0 10px 25px #cf5c7040}.yes:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 30px #cf5c7050}.no{background:#fff;border:1px solid var(--line);color:#957e7e;position:relative;z-index:2;touch-action:none}.tiny-note{font-size:.8rem;color:#ad9290;margin-top:12px}.answer{display:none;margin:25px auto 0;max-width:520px;border:1px solid #f1d6d3;border-radius:21px;padding:24px;background:#fff8f5;animation:rise .45s ease both}.answer.show{display:block}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}.answer h3{color:#c75f70;margin:0 0 9px}.answer p{margin:0;color:#775e5e;line-height:1.85}.footer{text-align:center;color:#b29692;font-size:.8rem;margin-top:56px}.float{position:fixed;z-index:-1;color:#e6a0a4;opacity:.35;animation:drift 9s ease-in-out infinite}.f1{top:20%;left:5%;font-size:24px}.f2{top:72%;right:7%;font-size:32px;animation-delay:-3s}.f3{top:49%;left:2%;font-size:18px;animation-delay:-6s}@keyframes drift{50%{transform:translateY(-18px) rotate(10deg)}}
     @media(max-width:620px){.steps{grid-template-columns:1fr}.step{display:grid;grid-template-columns:36px 1fr;column-gap:8px;padding:16px}.step .num{grid-row:span 2;padding-top:2px}.step h3{margin:0 0 3px}.actions{gap:8px}.btn{padding:13px 17px;font-size:.94rem}.letter{border-radius:23px}.wrap{width:min(100% - 28px,790px)}}
-    @media(max-width:430px){.wrap{width:calc(100% - 32px)}.topline{font-size:.7rem}.hero{padding-top:58px;padding-bottom:38px}.lead{font-size:1rem}.actions{height:112px;gap:10px}.btn{min-height:48px;padding-inline:18px}.question{margin-top:54px}}
+    @media(max-width:620px){.actions{height:142px;display:flex;flex-direction:column;gap:12px;padding:4px 0}.actions .btn{min-height:48px}.actions .yes{order:0}.actions .no{order:1}}
+    @media(max-width:430px){.wrap{width:calc(100% - 32px)}.topline{font-size:.7rem}.hero{padding-top:58px;padding-bottom:38px}.lead{font-size:1rem}.question{margin-top:54px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -32,24 +33,36 @@
     <footer class="footer">ทำด้วยความตั้งใจ และคำขอโทษจากใจ ♡</footer>
   </main>
   <script>
-    const noBtn=document.getElementById('no'), zone=document.getElementById('actions'), note=document.getElementById('no-note');
+        const noBtn=document.getElementById('no'), zone=document.getElementById('actions'), note=document.getElementById('no-note'), yesBtn=document.getElementById('yes');
     let tries=0;
     function dodge(){
-      const z=zone.getBoundingClientRect(), b=noBtn.getBoundingClientRect();
-      const maxX=Math.max(0,z.width-b.width), maxY=Math.max(0,z.height-b.height);
-      let x=Math.random()*maxX, y=Math.random()*maxY;
-      if(Math.abs(x-(b.left-z.left))<80) x=x<maxX/2?Math.min(maxX,x+100):Math.max(0,x-100);
-      noBtn.style.position='absolute'; noBtn.style.left=x+'px'; noBtn.style.top=y+'px';
+      const z=zone.getBoundingClientRect(), y=yesBtn.getBoundingClientRect(), b=noBtn.getBoundingClientRect();
+      const pad=10, maxX=Math.max(pad,z.width-b.width-pad), maxY=Math.max(pad,z.height-b.height-pad);
+      const yesBox={left:y.left-z.left-pad,right:y.right-z.left+pad,top:y.top-z.top-pad,bottom:y.bottom-z.top+pad};
+      const options=[];
+      for(let i=0;i<40;i++){
+        const x=pad+Math.random()*Math.max(0,maxX-pad), top=pad+Math.random()*Math.max(0,maxY-pad);
+        const overlaps=x<yesBox.right && x+b.width>yesBox.left && top<yesBox.bottom && top+b.height>yesBox.top;
+        if(!overlaps) options.push({x,top});
+      }
+      if(!options.length){
+        const below=yesBox.bottom+8;
+        if(below+b.height<z.height-pad) options.push({x:Math.max(pad,(z.width-b.width)/2),top:below});
+        else options.push({x:pad,top:pad});
+      }
+      const chosen=options[Math.floor(Math.random()*options.length)];
+      noBtn.style.position='absolute'; noBtn.style.left=chosen.x+'px'; noBtn.style.top=chosen.top+'px';
       tries++;
-      const lines=['อุ๊ย เกือบแล้ว 😳','ขอคิดดูก่อนน้า… อ้าว หนีอีกแล้ว','จับไม่ได้หรอก เค้าเขิน 🙈','ปุ่มนี้อยากให้คุยกันดี ๆ มากกว่า ♡'];
+      const lines=['อุ๊ย เกือบแล้ว 😳','ขอคิดดูก่อนน้า… อ้าว หนีอีกแล้ว','จับไม่ได้หรอก เค้าเขิน 🙈','ปุ่มนี้ขี้อายจัง ♡'];
       note.textContent=lines[(tries-1)%lines.length];
     }
-    noBtn.addEventListener('pointerenter',dodge);
+    noBtn.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse') dodge()});
     noBtn.addEventListener('pointerdown',e=>{e.preventDefault();dodge()});
-    noBtn.addEventListener('click',e=>{e.preventDefault();dodge()});
-    document.getElementById('yes').addEventListener('click',()=>{document.getElementById('answer').classList.add('show');document.getElementById('answer').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('yes').textContent='ขอบคุณนะ ♡';});
+    noBtn.addEventListener('click',e=>{e.preventDefault();dodge()});document.getElementById('yes').addEventListener('click',()=>{document.getElementById('answer').classList.add('show');document.getElementById('answer').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('yes').textContent='ขอบคุณนะ ♡';});
   </script>
 </body>
 </html>
+
+
 
 
